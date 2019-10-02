@@ -1,85 +1,177 @@
-::::::  ::::::::::::::::::::::::::::::::::::::::::::::::::::::
-::::::  ::::::    Postface                              ::::::
-::::::  ::::::::::::::::::::::::::::::::::::::::::::::::::::::
+::  postface
+::
 ~>  %slog.[0 leaf+"%arvo-assembly"]
 =-  ~>  %slog.[0 leaf+"%arvo-assembled"]
     -
-=<  ::
-    ::  Arvo formal interface
-    ::
-    ::    this lifecycle wrapper makes the arvo door (multi-armed core)
-    ::    look like a gate (function or single-armed core), to fit
-    ::    urbit's formal lifecycle function. a practical interpreter
-    ::    can ignore it.
-    ::
-    |=  [now=@da ovo=*]
-    ^-  *
-    ~>  %slog.[0 leaf+"arvo-event"]
-    .(+> +:(poke now ovo))
-::::::  ::::::::::::::::::::::::::::::::::::::::::::::::::::::
-::::::  ::::::    volume 3, Arvo models and skeleton    ::::::
-::::::  ::::::::::::::::::::::::::::::::::::::::::::::::::::::
+=<
+::  arvo formal interface
+::
+::    this lifecycle wrapper makes the arvo door look like a gate to fit
+::    urbit's formal lifecycle function. a practical interpreter
+::    can ignore it.
+::
+|=  [now=@da ovo=*]
+^-  *
+~>  %slog.[0 leaf+"arvo-event"]
+.(+> +:(poke now ovo))
+::
 =>
+::  arvo models and skeleton
+::
 |%
-++  arch  {fil/(unit @uvI) dir/(map @ta $~)}            ::  fundamental node
-++  arvo  (wind {p/term q/mill} mill)                   ::  arvo card
-++  beam  {{p/ship q/desk r/case} s/path}               ::  global name
-++  beak  {p/ship q/desk r/case}                        ::  garnish with beak
-++  bone  @ud                                           ::  opaque duct
-++  case                                                ::  version
-          $%  {$da p/@da}                               ::  date
-              {$tas p/@tas}                             ::  label
-              {$ud p/@ud}                               ::  sequence
-          ==                                            ::
-++  desk  @tas                                          ::  ship desk case spur
-++  dock  (pair @p term)                                ::  message target
-++  cage  (cask vase)                                   ::  global metadata
-++  cask  |*(a/mold (pair mark a))                      ::  global data
-++  curd  {p/@tas q/*}                                  ::  typeless card
-++  duct  (list wire)                                   ::  causal history
-++  hypo  |*(a/mold (pair type a))                      ::  type associated
-++  hobo  |*  a/mold                                    ::  kiss wrapper
-          $?  $%  {$soft p/*}                           ::
-              ==                                        ::
-              a                                         ::
-          ==                                            ::
-++  mark  @tas                                          ::  content type
-++  mash  |=(* (mass +<))                               ::  producing mass
-++  mass  $~  [%$ [%& ~]]                               ::  memory usage
-          (pair cord (each noun (list mash)))           ::
-++  mill  (each vase milt)                              ::  vase+metavase
-++  milt  {p/* q/*}                                     ::  metavase
-++  monk  (each ship {p/@tas q/@ta})                    ::  general identity
-++  muse  {p/@tas q/duct r/arvo s/@ud}                  ::  sourced move
-++  move  {p/duct q/arvo}                               ::  arvo move
-++  ovum  {p/wire q/curd}                               ::  typeless ovum
-++  pane  (list {p/@tas q/vase})                        ::  kernel modules
-++  pone  (list {p/@tas q/vise})                        ::  kernel modules old
+::  +arch: fundamental node
+::
+++  arch  {fil/(unit @uvI) dir/(map @ta $~)}
+::  +arvo: arvo card
+::
+++  arvo  (wind {p/term q/mill} mill)
+::  +beam: global name
+::
+++  beam  {{p/ship q/desk r/case} s/path}
+::  +beak: garnish with beak
+::
+++  beak  {p/ship q/desk r/case}
+::  +bone: opaque duct
+::
+++  bone  @ud
+::  +case: version
+::
+++  case
+          $%  :: date
+              ::
+              {$da p/@da}
+              :: label
+              ::
+              {$tas p/@tas}
+              :: sequence
+              ::
+              {$ud p/@ud}
+          ==
+::  +desk: ship desk case spur
+::
+++  desk  @tas
+::  +dock: message target
+::
+++  dock  (pair @p term)
+::  +cage: global metadata
+::
+++  cage  (cask vase)
+::  +cask: global data
+::
+++  cask  |*(a/mold (pair mark a))
+::  +curd: typeless card
+::
+++  curd  {p/@tas q/*}
+::  +duct: causal history
+::
+++  duct  (list wire)
+::  +hypo: type associated
+::
+++  hypo  |*(a/mold (pair type a))
+::  +hobo: kiss wrapper
+::
+++  hobo  |*  a/mold
+          $?  $%  {$soft p/*}
+              ==
+              a
+          ==
+::  +mark: content type
+::
+++  mark  @tas
+::  +mash:  producing mass
+::
+++  mash  |=(* (mass +<))
+::  +mass: memory usage
+::
+++  mass  $~  [%$ [%& ~]]
+          (pair cord (each noun (list mash)))
+::  +mill: vase+metavase
+::
+++  mill  (each vase milt)
+::  +milt: metavase
+::
+++  milt  {p/* q/*}
+::  +monk: general identity
+::
+++  monk  (each ship {p/@tas q/@ta})
+::  +muse: source move
+::
+++  muse  {p/@tas q/duct r/arvo s/@ud}
+::  +move: arvo move
+::
+++  move  {p/duct q/arvo}
+::  +ovum: typeless ovum
+::
+++  ovum  {p/wire q/curd}
+::  +pane: kernel modules
+::
+++  pane  (list {p/@tas q/vase})
+::  +pone: kernel modules (old)
+::
+++  pone  (list {p/@tas q/vise})
+::  +scry-sample: scry sample
+::
 +$  scry-sample
   [fur=(unit (set monk)) ren=@tas why=shop syd=desk lot=coin tyl=path]
+::  +vane-sample: vane sample
+::
 +$  vane-sample
   [our=ship now=@da eny=@uvJ ski=slyd]
-++  ship  @p                                            ::  network identity
-++  sink  (trel bone ship path)                         ::  subscription
-++  sley  $-  {* (unit (set monk)) term beam}           ::  namespace function
-          (unit (unit cage))                            ::
-++  slyd  $-  {* (unit (set monk)) term beam}           ::  super advanced
-          (unit (unit (cask milt)))                     ::
-++  slyt  $-({* *} (unit (unit)))                       ::  old namespace
+::  +ship: network identity
+::
+++  ship  @p
+::  +sink: subscription
+::
+++  sink  (trel bone ship path)
+::  +sley: namespace function
+::
+++  sley  $-  {* (unit (set monk)) term beam}
+          (unit (unit cage))
+::  +slyd: super advanced
+::
+++  slyd  $-  {* (unit (set monk)) term beam}
+          (unit (unit (cask milt)))
+::  +slyt: old namespace
+::
+++  slyt  $-({* *} (unit (unit)))
+::  +vane: vane
+::
 +$  vane  [=vase =worm]
-++  vile                                                ::  reflexive constants
-          $:  typ/type                                  ::  -:!>(*type)
-              duc/type                                  ::  -:!>(*duct)
-              pah/type                                  ::  -:!>(*path)
-              mev/type                                  ::  -:!>([%meta *vase])
-          ==                                            ::
-++  wind                                                ::  new kernel action
-          |*  {a/mold b/mold}                           ::  forward+reverse
-          $%  {$pass p/path q/a}                        ::  advance
-              {$slip p/a}                               ::  lateral
-              {$give p/b}                               ::  retreat
-          ==                                            ::
-++  wire  path                                          ::  event pretext
+::  +vile: reflexive constants
+::
+++  vile
+          $:  :: -:!>(*type)
+              ::
+              typ/type
+              :: -:!>(*duct)
+              ::
+              duc/type
+              :: -:!>(*path)
+              ::
+              pah/type
+              :: -:!>([%meta *vase])
+              ::
+              mev/type
+          ==
+::  +wind: new kernel action
+::
+++  wind
+          |*  :: forward+reverse
+              ::
+              {a/mold b/mold}
+          $%  :: advance
+              ::
+              {$pass p/path q/a}
+              :: lateral
+              ::
+              {$slip p/a}
+              :: retreat
+              ::
+              {$give p/b}
+          ==
+:: +wire: event pretext
+::
+++  wire  path
 --
 =>
 ~%  %hex  +>  ~
