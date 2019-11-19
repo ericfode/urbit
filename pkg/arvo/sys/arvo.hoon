@@ -37,16 +37,16 @@
 ::  +case: version
 ::
 ++  case
-          $%  :: date
-              ::
-              {$da p/@da}
-              :: label
-              ::
-              {$tas p/@tas}
-              :: sequence
-              ::
-              {$ud p/@ud}
-          ==
+  $%  :: date
+      ::
+      {$da p/@da}
+      :: label
+      ::
+      {$tas p/@tas}
+      :: sequence
+      ::
+      {$ud p/@ud}
+  ==
 ::  +desk: ship desk case spur
 ::
 ++  desk  @tas
@@ -140,35 +140,35 @@
 ::  +vile: reflexive constants
 ::
 ++  vile
-          $:  :: -:!>(*type)
-              ::
-              typ/type
-              :: -:!>(*duct)
-              ::
-              duc/type
-              :: -:!>(*path)
-              ::
-              pah/type
-              :: -:!>([%meta *vase])
-              ::
-              mev/type
-          ==
+  $:  :: -:!>(*type)
+      ::
+      typ/type
+      :: -:!>(*duct)
+      ::
+      duc/type
+      :: -:!>(*path)
+      ::
+      pah/type
+      :: -:!>([%meta *vase])
+      ::
+      mev/type
+  ==
 ::  +wind: new kernel action
 ::
 ++  wind
-          |*  :: forward+reverse
-              ::
-              {a/mold b/mold}
-          $%  :: advance
-              ::
-              {$pass p/path q/a}
-              :: lateral
-              ::
-              {$slip p/a}
-              :: retreat
-              ::
-              {$give p/b}
-          ==
+  |*  :: forward+reverse
+      ::
+      {a/mold b/mold}
+  $%  :: advance
+      ::
+      {$pass p/path q/a}
+      :: lateral
+      ::
+      {$slip p/a}
+      :: retreat
+      ::
+      {$give p/b}
+  ==
 :: +wire: event pretext
 ::
 ++  wire  path
