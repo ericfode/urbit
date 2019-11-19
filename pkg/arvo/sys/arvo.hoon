@@ -21,94 +21,94 @@
 |%
 ::  +arch: fundamental node
 ::
-++  arch  {fil/(unit @uvI) dir/(map @ta $~)}
++$  arch  [fil=(unit @uvI) dir=(map @ta %~)]
 ::  +arvo: arvo card
 ::
-++  arvo  (wind {p/term q/mill} mill)
++$  arvo  (wind [p=term q=mill] mill)
 ::  +beam: global name
 ::
-++  beam  {{p/ship q/desk r/case} s/path}
++$  beam  [[p=ship q=desk r=case] s=path]
 ::  +beak: garnish with beak
 ::
-++  beak  {p/ship q/desk r/case}
++$  beak  [p=ship q=desk r=case]
 ::  +bone: opaque duct
 ::
-++  bone  @ud
++$  bone  @ud
 ::  +case: version
 ::
-++  case
++$  case
   $%  :: date
       ::
-      {$da p/@da}
+      [%da p=@da]
       :: label
       ::
-      {$tas p/@tas}
+      [%tas p=@tas]
       :: sequence
       ::
-      {$ud p/@ud}
+      [%ud p=@ud]
   ==
 ::  +desk: ship desk case spur
 ::
-++  desk  @tas
++$  desk  @tas
 ::  +dock: message target
 ::
-++  dock  (pair @p term)
++$  dock  (pair @p term)
 ::  +cage: global metadata
 ::
-++  cage  (cask vase)
++$  cage  (cask vase)
 ::  +cask: global data
 ::
-++  cask  |*(a/mold (pair mark a))
++*  cask  [a]  (pair mark a)
 ::  +curd: typeless card
 ::
-++  curd  {p/@tas q/*}
++$  curd  [p=@tas q=*]
 ::  +duct: causal history
 ::
-++  duct  (list wire)
++$  duct  (list wire)
 ::  +hypo: type associated
 ::
-++  hypo  |*(a/mold (pair type a))
++*  hypo  [a]  (pair type a)
 ::  +hobo: kiss wrapper
 ::
-++  hobo  |*  a/mold
-          $?  $%  {$soft p/*}
-              ==
-              a
-          ==
++*  hobo  [a]
+  $?  $%  [%soft p=*]
+      ==
+      a
+  ==
 ::  +mark: content type
 ::
-++  mark  @tas
++$  mark  @tas
 ::  +mash:  producing mass
 ::
 ++  mash  |=(* (mass +<))
 ::  +mass: memory usage
 ::
-++  mass  $~  [%$ [%& ~]]
++$  mass  $~  [%$ [%& ~]]
           (pair cord (each noun (list mash)))
 ::  +mill: vase+metavase
 ::
-++  mill  (each vase milt)
++$  mill  (each vase milt)
 ::  +milt: metavase
 ::
-++  milt  {p/* q/*}
++$  milt  [p=* q=*]
 ::  +monk: general identity
 ::
-++  monk  (each ship {p/@tas q/@ta})
++$  monk  (each ship [p=@tas q=@ta])
 ::  +muse: source move
 ::
-++  muse  {p/@tas q/duct r/arvo s/@ud}
++$  muse  [p=@tas q=duct r=arvo s=@ud]
 ::  +move: arvo move
 ::
-++  move  {p/duct q/arvo}
++$  move  [p=duct q=arvo]
 ::  +ovum: typeless ovum
 ::
-++  ovum  {p/wire q/curd}
++$  ovum  [p=wire q=curd]
 ::  +pane: kernel modules
 ::
-++  pane  (list {p/@tas q/vase})
++$  pane  (list [p=@tas q=vase])
 ::  +pone: kernel modules (old)
 ::
-++  pone  (list {p/@tas q/vise})
++$  pone  (list [p=@tas q=vise])
 ::  +scry-sample: scry sample
 ::
 +$  scry-sample
@@ -119,59 +119,59 @@
   [our=ship now=@da eny=@uvJ ski=slyd]
 ::  +ship: network identity
 ::
-++  ship  @p
++$  ship  @p
 ::  +sink: subscription
 ::
-++  sink  (trel bone ship path)
++$  sink  (trel bone ship path)
 ::  +sley: namespace function
 ::
-++  sley  $-  {* (unit (set monk)) term beam}
++$  sley  $-  [* (unit (set monk)) term beam]
           (unit (unit cage))
 ::  +slyd: super advanced
 ::
-++  slyd  $-  {* (unit (set monk)) term beam}
++$  slyd  $-  [* (unit (set monk)) term beam]
           (unit (unit (cask milt)))
 ::  +slyt: old namespace
 ::
-++  slyt  $-({* *} (unit (unit)))
++$  slyt  $-([* *] (unit (unit)))
 ::  +vane: vane
 ::
 +$  vane  [=vase =worm]
 ::  +vile: reflexive constants
 ::
-++  vile
++$  vile
   $:  :: -:!>(*type)
       ::
-      typ/type
+      typ=type
       :: -:!>(*duct)
       ::
-      duc/type
+      duc=type
       :: -:!>(*path)
       ::
-      pah/type
+      pah=type
       :: -:!>([%meta *vase])
       ::
-      mev/type
+      mev=type
   ==
 ::  +wind: new kernel action
 ::
-++  wind
-  |*  :: forward+reverse
++*  wind
+      :: forward+reverse
       ::
-      {a/mold b/mold}
+      [a b]
   $%  :: advance
       ::
-      {$pass p/path q/a}
+      [%pass p=path q=a]
       :: lateral
       ::
-      {$slip p/a}
+      [%slip p=a]
       :: retreat
       ::
-      {$give p/b}
+      [%give p=b]
   ==
 :: +wire: event pretext
 ::
-++  wire  path
++$  wire  path
 --
 =>
 ~%  %hex  +>  ~
