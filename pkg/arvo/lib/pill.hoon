@@ -25,9 +25,9 @@
     :~  ::  sys/zuse: standard library
         ::
         [%$ /zuse]
-        ::  sys/vane/ames: network
+        ::  sys/vane/alef: network
         ::
-        [%a /vane/ames]
+        [%a /vane/alef]
         ::  sys/vane/behn: timer
         ::
         [%b /vane/behn]
@@ -45,11 +45,11 @@
         [%f /vane/ford]
         ::  sys/vane/gall: applications
         ::
-        [%m /vane/mall]
+        [%g /vane/gall]
         ::  sys/vane/iris: http client
         ::
         [%i /vane/iris]
-        ::  sys/vane/jael: security
+        ::  sys/vane/kale: security
         ::
         [%j /vane/jael]
     ==
@@ -63,7 +63,7 @@
 ::
 ++  file-ovum
   =/  directories
-    `(list path)`~[/app /age /gen /lib /mar /ren /sec /sur /sys /tests /web]
+    `(list path)`~[/app /ted /gen /lib /mar /ren /sec /sur /sys /tests /web]
   |=  bas=path
   ^-  unix-event
   ::

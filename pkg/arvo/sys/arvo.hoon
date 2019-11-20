@@ -256,14 +256,9 @@
     ++  slur-e  ~/(%slur-e |=({gat/vase hil/mill} =+(%e (slur gat hil))))
     ++  slur-f  ~/(%slur-f |=({gat/vase hil/mill} =+(%f (slur gat hil))))
     ++  slur-g  ~/(%slur-g |=({gat/vase hil/mill} =+(%g (slur gat hil))))
+    ++  slur-i  ~/(%slur-i |=({gat/vase hil/mill} =+(%i (slur gat hil))))
     ++  slur-j  ~/(%slur-j |=({gat/vase hil/mill} =+(%j (slur gat hil))))
     ++  slur-z  ~/(%slur-z |=({gat/vase hil/mill} =+(%z (slur gat hil))))
-    ++  slur-r
-      ~/  %slur-r
-      |=({gat/vase hil/mill} =+(%r (slur gat hil)))
-    ++  slur-l
-      ~/  %slur-l
-      |=({gat/vase hil/mill} =+(%l (slur gat hil)))
     ::
     ++  slur-pro                                        ::  profiling slur
       ~/  %slur-pro
@@ -276,10 +271,8 @@
         $e  (slur-e gat hil)
         $f  (slur-f gat hil)
         $g  (slur-g gat hil)
+        $i  (slur-i gat hil)
         $j  (slur-j gat hil)
-      ::
-        %l  (slur-l gat hil)
-        %r  (slur-r gat hil)
       ==
     ::
     ++  song                                            ::  reduce metacard
@@ -545,7 +538,7 @@
       ~?  &(!lac !=(%$ p.gum))
         :-  (runt [s.gum '|'] "")
         :^  %pass  [p.gum p.q.r.gum]
-          ?:  ?=(?(%deal %deal-mall) +>-.q.q.r.gum)
+          ?:  ?=(?(%deal %deal-gall) +>-.q.q.r.gum)
             :-  :-  +>-.q.q.r.gum
                 (,[[ship ship] term term] [+>+< +>+>- +>+>+<]:q.q.r.gum)
             p.r.gum

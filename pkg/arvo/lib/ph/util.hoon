@@ -1,7 +1,7 @@
 ::  Utility functions for constructing tests
 ::
-/+  ph
-=,  ph
+/-  aquarium
+=,  aquarium
 |%
 ::
 ::  Turn [ship (list unix-event)] into (list ph-event)
@@ -101,7 +101,7 @@
 ++  scry-aqua
   |*  [a=mold our=@p now=@da pax=path]
   .^  a
-      %mx
+      %gx
       (scot %p our)
       %aqua
       (scot %da now)

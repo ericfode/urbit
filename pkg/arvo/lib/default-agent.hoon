@@ -3,17 +3,15 @@
 ?:  ?=(%& help)
   ~|  %default-agent-helpfully-crashing
   skeleton
-|_  =bowl:mall
+|_  =bowl:gall
 ++  on-init
   `agent
 ::
 ++  on-save
-  ~&  "extracting empty state for {<dap.bowl>}"
   !>(~)
 ::
 ++  on-load
   |=  old-state=vase
-  ~&  "updating agent {<dap.bowl>} by throwing away old state"
   `agent
 ::
 ++  on-poke
@@ -36,8 +34,8 @@
   !!
 ::
 ++  on-agent
-  |=  [=wire =sign:agent:mall]
-  ^-  (quip card:agent:mall _agent)
+  |=  [=wire =sign:agent:gall]
+  ^-  (quip card:agent:gall _agent)
   ?-    -.sign
       %poke-ack
     ?~  p.sign
