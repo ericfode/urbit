@@ -29,7 +29,7 @@
 +$  position
   [row=@ud col=@ud]
 ::
-+$  all-state  bufs=(map uri=@t buf=wall)
++$  all-state  [bufs=(map uri=@t buf=wall)]
 --
 ^-  agent:gall
 =|  all-state
@@ -84,6 +84,7 @@
     ^-  (quip card _this)
     =^  cards  state
       ?+  wire  (on-arvo:def wire sign-arvo)
+        [%wait *]     ?>(?=(%wake +<.sign-arvo) [(handle-commit-wake) state])
         [%connect ~]  ?>(?=(%bound +<.sign-arvo) `state)
       ==
     [cards this]
@@ -154,6 +155,7 @@
       %commit      (handle-commit buf eyre-id uri.lsp-req)
       %hover       (handle-hover buf eyre-id +>.lsp-req)
     ==
+ 
   =.  bufs
     (~(put by bufs) uri.lsp-req buf)
   [cards state]
@@ -187,14 +189,11 @@
       ==
   ==
 ::
-++  handle-commit
-  |=  [buf=wall eyre-id=@ta uri=@t]
-  ^-  [(list card) wall]
-  :_  buf
-  =/  jon
-    (regen-diagnostics buf)
-  :_  (json-response eyre-id jon)
-  :*
+++  handle-commit-wake
+  |=  ~
+  ^-  (quip card _state)
+  :_  state
+    :*
     %pass
     /commit
     %agent
@@ -203,6 +202,18 @@
     %kiln-commit
     !>([q.byk.bow |])
   ==
+  
+  
+
+++  handle-commit
+  |=  [buf=wall eyre-id=@ta uri=@t]
+  ^-  [(list card) wall]
+  :_  buf
+  =/  jon
+    (regen-diagnostics buf)
+  :_  (json-response eyre-id jon)
+  [%pass /time %arvo %b %wait (add now.bol wait-time.state)]
+
 ::
 ++  handle-hover
   |=  [buf=wall eyre-id=@ta row=@ud col=@ud]
