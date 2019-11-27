@@ -29,7 +29,7 @@
 +$  position
   [row=@ud col=@ud]
 ::
-+$  all-state  [bufs=(map uri=@t buf=wall)]
++$  all-state  bufs=(map uri=@t buf=wall)
 --
 ^-  agent:gall
 =|  all-state
